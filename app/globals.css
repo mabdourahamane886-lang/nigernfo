@@ -45,3 +45,23 @@
 .empty-directory p{font-size:12px;color:var(--muted)}
 .empty-directory button{margin-top:14px;border:0;background:var(--green);color:white;padding:11px 16px;border-radius:30px;font-size:11px;font-weight:700}
 @media(max-width:760px){.directory-filters{align-items:stretch;flex-direction:column}.directory-select,.directory-select select{width:100%}.directory-filters .search-box{max-width:none;width:100%}}
+
+
+.detail-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:24px 0}
+.detail-facts>div{display:flex;flex-direction:column;gap:7px;padding:16px;border:1px solid var(--line);border-radius:8px;background:#fafcfb}
+.detail-facts b{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--green)}
+.detail-facts span,.detail-notice{font-size:12px;line-height:1.7;color:var(--muted)}
+.detail-notice{padding:16px;border-left:3px solid var(--orange);background:var(--soft)}
+.ad-audience,.ad-formats{margin-bottom:48px}
+.ad-audience h2,.ad-formats h2,.ad-contact h2{font-size:28px;margin:0 0 18px}
+.ad-formats>p,.ad-contact p{font-size:13px;color:var(--muted);line-height:1.7}
+.ad-contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;padding:30px;border-radius:12px;background:#f5f8f5}
+.ad-contact a{color:var(--green);font-weight:700;text-decoration:none}
+.quote-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.quote-form label{display:flex;flex-direction:column;gap:7px;font-size:11px;font-weight:700;color:#333}
+.quote-form input,.quote-form select,.quote-form textarea{width:100%;min-width:0;border:1px solid #dfe5df;border-radius:6px;padding:12px;background:white;font:12px Inter,Arial;color:var(--ink);outline-color:var(--green)}
+.quote-form textarea{resize:vertical}
+.quote-message{grid-column:1/-1}
+.quote-form button{justify-self:start;border:0;border-radius:30px;padding:13px 20px;background:var(--orange);color:white;font-size:11px;font-weight:800;cursor:pointer}
+.quote-form>p{grid-column:1/-1;font-size:10px;color:var(--muted);line-height:1.6;margin:0}
+@media(max-width:760px){.ad-contact{grid-template-columns:1fr;padding:22px}.quote-form{grid-template-columns:1fr}.quote-message,.quote-form>p{grid-column:auto}}
