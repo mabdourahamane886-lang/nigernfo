@@ -23,8 +23,8 @@ export default function HomePage() {
   </header>
   <div className="breaking"><b>URGENT</b><span>Suivez les dernières informations du Niger et de la région</span><a href="/fr/actualites">Toute l’actualité ↗</a></div>
   <section className="hero">
-   <div className="hero-content"><p className="eyebrow">L’ACTUALITÉ DU NIGER EN TEMPS RÉEL</p><h1>L’information qui vous rapproche de l’essentiel.</h1><p className="intro">Actualités, événements, émissions et opportunités : suivez ce qui se passe au Niger et dans le monde.</p><a className="cta" href="/fr/actualites">Lire les actualités <span>↗</span></a></div>
-   <div className="hero-image"><img src="https://qgvhpeqwwolqrmiovjks.supabase.co/storage/v1/object/public/medias/1010686279-a375d546.jpg" alt="Actualité au Niger"/><span>À LA UNE</span></div>
+   <div className="hero-content"><p className="eyebrow">À LA UNE · NIGER INFO</p><h1>AMANATA FAIT PEAU NEUVE : VOTRE ARGENT, MAIS EN BEAUCOUP PLUS SIMPLE</h1><p className="intro">AMANATA NOUVELLE GÉNÉRATION : UNE EXPÉRIENCE REPENSÉE POUR VOUS.</p><a className="cta" href="/fr/actualites/amanata-fait-peau-neuve-votre-argent-mais-en-beaucoup-plus-simple">Lire la suite <span>↗</span></a></div>
+   <div className="hero-image"><img src="https://qgvhpeqwwolqrmiovjks.supabase.co/storage/v1/object/public/medias/1010666888-f735925a.jpg" alt="Amanata fait peau neuve : votre argent, mais en beaucoup plus simple"/><span>À LA UNE</span></div>
   </section>
   <NewsExplorer/>
   <section className="section" id="rubriques"><div className="section-heading"><div><p className="eyebrow">EXPLOREZ NIGER INFO</p><h2>Nos rubriques</h2></div><span>Les informations et services en un seul endroit</span></div><div className="cards">{sections.map((s,i)=><a className="card" href={s.href} key={s.href}><span className="number">0{i+1} · {s.icon}</span><h3>{s.title}</h3><p>{s.description}</p><span className="arrow">↗</span></a>)}</div></section>
