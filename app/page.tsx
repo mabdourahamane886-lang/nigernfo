@@ -1,4 +1,9 @@
-import { NewsExplorer, navItems } from "./components/news-explorer";
+import { NewsExplorer } from "./components/news-explorer";
+
+const navItems: [string, string][] = [
+ ["Actualités", "/fr/actualites"], ["Événements", "/fr/evenements"], ["Émissions", "/fr/emissions"],
+ ["Emplois", "/fr/emplois"], ["Appels d’offres", "/fr/appels-offres"], ["Publicité", "/fr/publicite"]
+];
 
 const sections = [
  {title:"Événements",description:"Agenda, rendez-vous et événements à venir.",href:"/fr/evenements",icon:"◷"},
