@@ -20,3 +20,28 @@
 @media(max-width:480px){.breaking{font-size:9px;gap:8px}.breaking a{font-size:9px}.hero h1{letter-spacing:-2px}.section-heading{align-items:flex-start;flex-direction:column}.section-heading h2,.section h2{font-size:28px}.news-grid,.cards{grid-template-columns:1fr}.news-card img{height:190px}.popular{align-items:flex-start;flex-direction:column}.site-footer{gap:24px}.site-footer>div:first-child{grid-column:1/-1}}
 
 .newsletter-note{max-width:420px;padding:16px 20px;background:#fff;border:1px solid #f2d8c9;border-radius:8px;color:var(--muted);font-size:11px;line-height:1.7}.article{max-width:900px;margin:0 auto;padding:58px 24px 80px}.article h1{font-size:clamp(32px,5vw,58px);line-height:1.12;letter-spacing:-2px}.article>img{width:100%;height:auto;max-height:560px;object-fit:cover;border-radius:8px;margin:20px 0}.article .intro{max-width:760px;margin:20px 0;line-height:1.8}.article h2{font-size:26px;margin-top:36px}.share-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 0;border-block:1px solid var(--line);font-size:11px}.share-row a{color:var(--orange);text-decoration:none;font-weight:700}.page-intro{padding:55px max(7vw,24px) 35px;background:#fff7f2}.page-intro h1{font-size:44px}.page-content{padding:35px max(7vw,24px) 70px;min-height:45vh}.placeholder-panel{border:1px solid var(--line);padding:25px;border-radius:8px;color:var(--muted);font-size:13px;line-height:1.8}.menu-toggle{display:none;text-decoration:none;color:var(--orange)}@media(max-width:760px){.menu-toggle{display:block}.article{padding:40px 20px 80px}}
+
+
+/* Niger Info source identity: orange primary + deep green secondary */
+:root{--green:#006B2E;--orange:#F25C05;--dark:#151515}
+.section-heading h2{position:relative;padding-left:14px}
+.section-heading h2:before{content:"";position:absolute;left:0;top:5px;bottom:5px;width:4px;border-radius:4px;background:var(--green)}
+.filter.active,.filter:hover{background:var(--green);border-color:var(--green);color:#fff}
+.news-category{color:var(--green)}
+.news-copy b,.popular>a{color:var(--green)}
+.news-card:hover .news-copy h3,.card:hover h3{color:var(--green)}
+.directory-filters{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0 24px}
+.directory-select{display:flex;flex-direction:column;gap:5px;min-width:150px;font-size:10px;font-weight:700;color:var(--muted)}
+.directory-select select{height:42px;border:1px solid var(--line);border-radius:6px;background:#fff;padding:0 12px;font:500 12px Inter,Arial;color:var(--ink);min-width:150px}
+.directory-filters .search-box{flex:1;min-width:220px}
+.directory-image{position:relative;background:#f3f5f3;aspect-ratio:16/9;display:grid;place-items:center;overflow:hidden}
+.directory-image img{width:100%;height:100%;object-fit:cover}
+.play-mark{position:absolute;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--orange);color:white;box-shadow:0 8px 25px #0003}
+.directory-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:12px 0;color:var(--muted);font-size:10px;flex-wrap:wrap}
+.status-chip{background:#eee;color:#555;padding:5px 8px;border-radius:30px}
+.empty-directory{padding:55px 20px;text-align:center;border:1px dashed #d8ded9;border-radius:10px;background:#fafcfb}
+.empty-directory>span{font-size:28px;color:var(--green)}
+.empty-directory h3{font-size:19px;margin:10px 0}
+.empty-directory p{font-size:12px;color:var(--muted)}
+.empty-directory button{margin-top:14px;border:0;background:var(--green);color:white;padding:11px 16px;border-radius:30px;font-size:11px;font-weight:700}
+@media(max-width:760px){.directory-filters{align-items:stretch;flex-direction:column}.directory-select,.directory-select select{width:100%}.directory-filters .search-box{max-width:none;width:100%}}
