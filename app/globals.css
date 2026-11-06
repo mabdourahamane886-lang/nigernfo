@@ -65,3 +65,35 @@
 .quote-form button{justify-self:start;border:0;border-radius:30px;padding:13px 20px;background:var(--orange);color:white;font-size:11px;font-weight:800;cursor:pointer}
 .quote-form>p{grid-column:1/-1;font-size:10px;color:var(--muted);line-height:1.6;margin:0}
 @media(max-width:760px){.ad-contact{grid-template-columns:1fr;padding:22px}.quote-form{grid-template-columns:1fr}.quote-message,.quote-form>p{grid-column:auto}}
+
+/* Homepage reconstruction: source imagery, editorial cards and motion */
+.brand-logo{width:38px;height:38px;object-fit:contain;border-radius:50%}
+.hero-rebuild{min-height:570px;overflow:hidden}
+.hero-rebuild .hero-content{position:relative;z-index:2}
+.hero-rebuild h1{max-width:690px}
+.hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.text-link{font-size:12px;font-weight:700;text-decoration:none;color:var(--green)}
+.hero-visual{position:relative;min-height:410px}
+.hero-photo{position:absolute;overflow:hidden;border-radius:12px;box-shadow:0 20px 60px #15151520}
+.hero-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.hero-photo-main{inset:0 8% 8% 5%;animation:heroFloat 7s ease-in-out infinite}
+.hero-photo-small{width:38%;height:42%;right:0;bottom:0;border:7px solid #fff;animation:heroFloat 8s ease-in-out infinite reverse}
+.photo-caption{position:absolute;left:16px;bottom:16px;background:var(--green);color:white;padding:9px 12px;border-radius:3px;font-size:10px;font-weight:800;letter-spacing:.7px}
+.hero-stamp{position:absolute;z-index:2;top:18px;right:0;padding:15px 18px;background:var(--orange);color:white;font:800 12px/1.35 Archivo,Inter,sans-serif;letter-spacing:1px;transform:rotate(4deg);box-shadow:0 10px 25px #0002}
+.feature-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:26px max(7vw,24px) 55px}
+.feature-tile{height:230px;position:relative;overflow:hidden;border-radius:9px;color:white;text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;isolation:isolate}
+.feature-tile img,.feature-shade{position:absolute;inset:0;width:100%;height:100%}
+.feature-tile img{object-fit:cover;z-index:-2;transition:transform .5s}
+.feature-shade{z-index:-1;background:linear-gradient(0deg,#000b,#0001 75%)}
+.feature-tile:hover img{transform:scale(1.06)}
+.feature-index{font-size:10px;font-weight:800;letter-spacing:1px;color:#fff;margin-bottom:10px}
+.feature-tile strong{font:700 20px/1.2 Archivo,Inter,sans-serif;max-width:260px}
+.feature-arrow{position:absolute;right:20px;top:20px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--orange)}
+.amanata-panel{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center;padding:60px max(7vw,24px);background:#f7f8f6}
+.amanata-image{height:330px;overflow:hidden;border-radius:10px}
+.amanata-image img{width:100%;height:100%;object-fit:cover}
+.amanata-copy h2{font:700 clamp(28px,3.4vw,43px)/1.12 Archivo,Inter,sans-serif;letter-spacing:-1.5px;margin:12px 0}
+.amanata-copy>p:not(.eyebrow){font-size:13px;line-height:1.8;color:var(--muted);max-width:490px}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@media(max-width:760px){.hero-rebuild{min-height:0}.hero-visual{min-height:300px}.feature-strip{grid-template-columns:1fr;padding:8px 20px 35px}.feature-tile{height:190px}.amanata-panel{grid-template-columns:1fr;padding:38px 20px;gap:24px}.amanata-image{height:230px}.hero-photo-main{inset:0 6% 7% 0}}
+@media(prefers-reduced-motion:reduce){.hero-photo-main,.hero-photo-small{animation:none}.feature-tile img{transition:none}}
