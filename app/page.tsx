@@ -14,7 +14,7 @@ export default function HomePage() {
   <header className="site-header">
    <a className="brand" href="/" aria-label="Niger Info accueil"><span className="brand-mark">N</span><span>NIGER<strong>INFO</strong></span></a>
    <nav className="desktop-nav">{navItems.slice(1).map(([label,href])=><a href={href} key={href}>{label}</a>)}</nav>
-   <div className="header-actions"><a className="publish-link" href="/publicite">Publier une publicité</a><a className="language" href="/en">EN</a><button className="menu-toggle" aria-label="Ouvrir le menu" onClick="void(0)">☰</button></div>
+   <div className="header-actions"><a className="publish-link" href="/publicite">Publier une publicité</a><a className="language" href="/en">EN</a><a className="menu-toggle" href="#rubriques" aria-label="Voir les rubriques">☰</a></div>
   </header>
   <div className="breaking"><b>URGENT</b><span>Suivez les dernières informations du Niger et de la région</span><a href="/actualites">Toute l’actualité ↗</a></div>
   <section className="hero">
