@@ -585,3 +585,92 @@ img { max-width:100%; }
 
 /* Mobile header cleanup: remove the black top information strip */
 .topline { display: none !important; }
+
+
+/* Niger Info menu: match the simple expanding navigation used by Bickri Service Agency */
+@media (max-width: 760px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 95;
+  }
+  .site-menu-root {
+    position: static;
+    display: contents;
+  }
+  .menu-toggle.bsa-style-menu {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    padding: 8px;
+    border: 0;
+    background: transparent;
+    color: var(--green);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .menu-toggle.bsa-style-menu span,
+  .menu-toggle.bsa-style-menu span::before,
+  .menu-toggle.bsa-style-menu span::after {
+    position: relative;
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--green);
+    content: "";
+    transition: transform .2s ease, top .2s ease, background-color .2s ease;
+  }
+  .menu-toggle.bsa-style-menu span::before,
+  .menu-toggle.bsa-style-menu span::after {
+    position: absolute;
+    left: 0;
+  }
+  .menu-toggle.bsa-style-menu span::before { top: -8px; }
+  .menu-toggle.bsa-style-menu span::after { top: 8px; }
+  .menu-toggle.bsa-style-menu.open span { background: transparent; }
+  .menu-toggle.bsa-style-menu.open span::before { top: 0; transform: rotate(45deg); }
+  .menu-toggle.bsa-style-menu.open span::after { top: 0; transform: rotate(-45deg); }
+
+  .bsa-mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 96;
+    display: none;
+    padding: 10px 20px 16px;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 15px 32px rgb(15 23 42 / 10%);
+  }
+  .bsa-mobile-menu.open {
+    display: grid;
+    gap: 0;
+    animation: bsaMenuReveal .18s ease-out;
+  }
+  .bsa-mobile-menu a {
+    display: block;
+    padding: 13px 8px;
+    border-bottom: 1px solid #eef1f5;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 750;
+    line-height: 1.35;
+  }
+  .bsa-mobile-menu a:last-child { border-bottom: 0; }
+  .bsa-mobile-menu a:active { color: var(--green); background: #f7fbf8; }
+}
+@keyframes bsaMenuReveal {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bsa-mobile-menu.open { animation: none; }
+  .menu-toggle.bsa-style-menu span,
+  .menu-toggle.bsa-style-menu span::before,
+  .menu-toggle.bsa-style-menu span::after { transition: none; }
+}
