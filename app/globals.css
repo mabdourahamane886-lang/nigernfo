@@ -581,3 +581,7 @@ img { max-width:100%; }
   .site-menu-panel { animation: none; }
   .site-menu-link { transition: none; }
 }
+
+
+/* Mobile header cleanup: remove the black top information strip */
+.topline { display: none !important; }
