@@ -51,16 +51,6 @@ export function SiteNavigation() {
         <a href="/fr/actualites" aria-label="Actualités"><span aria-hidden="true">▤</span><small>Actualités</small></a>
         <a href="/fr/emplois" aria-label="Emplois"><span aria-hidden="true">▣</span><small>Emplois</small></a>
         <a href="/fr/appels-offres" aria-label="Appels d’offres"><span aria-hidden="true">▧</span><small>Appels d’offres</small></a>
-        <button
-          type="button"
-          className="mobile-nav-menu"
-          aria-label="Ouvrir toutes les rubriques"
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen((value) => !value)}
-        >
-          <span aria-hidden="true">{isOpen ? "×" : "☰"}</span>
-          <small>Menu</small>
-        </button>
       </nav>
 
       {isOpen && (
