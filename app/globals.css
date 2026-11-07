@@ -233,3 +233,85 @@ img { height: auto; }
 .hero-stamp{font-size:9px;padding:8px 10px}.photo-caption{max-width:75%;font-size:8px}
 .feature-tile{height:180px}.news-card img{height:190px}
 }
+
+
+/* Responsive refinement: mobile-first finishing pass */
+html, body { width:100%; max-width:100%; overflow-x:clip; }
+body { -webkit-text-size-adjust:100%; }
+button, input, select, textarea { font:inherit; }
+img { max-width:100%; }
+@media (max-width:760px) {
+  .topline { min-height:30px; height:auto; padding:7px 16px; gap:8px; font-size:9px; }
+  .site-header { min-height:66px; padding:10px 16px; gap:10px; }
+  .brand { gap:7px; font-size:19px; letter-spacing:-.7px; }
+  .brand-logo { width:32px; height:32px; }
+  .header-actions { gap:12px; margin-left:auto; }
+  .menu-toggle { display:grid; place-items:center; width:40px; height:40px; font-size:23px; }
+  .breaking { padding:9px 16px; gap:8px; align-items:center; }
+  .breaking span { min-width:0; line-height:1.45; }
+  .breaking a { white-space:nowrap; }
+  .hero { padding:38px 18px 34px; gap:24px; }
+  .hero h1 { margin:13px 0; font-size:clamp(34px,9vw,48px); line-height:1.04; letter-spacing:-1.8px; overflow-wrap:anywhere; }
+  .hero .intro { font-size:13px; line-height:1.7; }
+  .hero-actions { gap:12px; }
+  .cta { min-height:44px; margin-top:12px; padding:12px 16px; }
+  .text-link { line-height:1.5; }
+  .section-heading { gap:8px; }
+  .section-heading h2,.section h2,.popular h2 { font-size:clamp(24px,6.5vw,30px); line-height:1.15; }
+  .news-section,.section { padding:38px 16px; }
+  .feature-strip { padding:8px 16px 30px; }
+  .feature-tile { border-radius:8px; padding:18px; }
+  .feature-tile strong { font-size:19px; }
+  .amanata-panel { padding:32px 16px; }
+  .amanata-copy h2 { font-size:clamp(26px,7vw,34px); }
+  .search-box { width:100%; max-width:none; min-height:44px; }
+  .filter-row { margin-right:-16px; padding-right:16px; scrollbar-width:thin; }
+  .filter { min-height:40px; padding:10px 14px; }
+  .news-grid,.cards { grid-template-columns:minmax(0,1fr); gap:14px; }
+  .news-card img { height:auto; aspect-ratio:16/10; }
+  .news-copy { padding:15px; }
+  .news-copy h3 { font-size:16px; line-height:1.4; }
+  .card { min-height:0; padding:20px; }
+  .card h3 { margin:15px 0 7px; }
+  .popular { padding:30px 16px; gap:10px; }
+  .newsletter { padding:32px 16px; gap:18px; }
+  .newsletter h2 { font-size:24px; line-height:1.2; }
+  .newsletter form { width:100%; min-width:0; }
+  .newsletter button { min-height:42px; padding:10px 14px; }
+  .site-footer { padding:32px 16px calc(92px + env(safe-area-inset-bottom)); gap:20px 14px; }
+  .site-footer>div { min-width:0; }
+  .site-footer a { overflow-wrap:anywhere; }
+  .mobile-nav { min-height:62px; padding:8px 2px calc(8px + env(safe-area-inset-bottom)); }
+  .mobile-nav a { flex:1; min-width:0; min-height:42px; justify-content:center; font-size:9px; }
+  .mobile-nav a span { font-size:18px; line-height:1.1; }
+  .page-intro { padding:34px 18px 24px; }
+  .page-intro h1 { font-size:clamp(30px,8vw,40px); line-height:1.08; letter-spacing:-1.5px; }
+  .page-content { padding:24px 16px 46px; }
+  .placeholder-panel { padding:18px; }
+  .article { padding:32px 16px calc(90px + env(safe-area-inset-bottom)); }
+  .article h1 { font-size:clamp(29px,8vw,42px); letter-spacing:-1.3px; }
+  .article h2 { font-size:23px; }
+  .article p { font-size:14px; line-height:1.8; }
+  .detail-facts { grid-template-columns:minmax(0,1fr); gap:9px; }
+  .ad-contact { padding:18px; }
+  .quote-form input,.quote-form select,.quote-form textarea { min-height:44px; font-size:16px; }
+  .quote-form textarea { min-height:120px; }
+  .quote-form button { min-height:44px; }
+}
+@media (max-width:390px) {
+  .topline { font-size:8px; }
+  .brand { font-size:17px; }
+  .brand-logo { width:29px; height:29px; }
+  .breaking { font-size:8px; }
+  .breaking b { padding:5px 6px; font-size:8px; }
+  .breaking a { font-size:8px; }
+  .hero { padding-inline:15px; }
+  .hero h1 { font-size:33px; }
+  .hero-stamp { letter-spacing:.5px; }
+  .mobile-nav a { font-size:8px; }
+  .mobile-nav a span { font-size:17px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+}
