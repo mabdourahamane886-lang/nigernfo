@@ -1,6 +1,7 @@
 import { NewsExplorer } from "./components/news-explorer";
 import { latestNews } from "@/data/news";
 import { NewsletterForm } from "./components/newsletter-form";
+import { SiteNavigation } from "./components/site-navigation";
 
 const navItems: [string, string][] = [
   ["Actualités", "/fr/actualites"], ["Événements", "/fr/evenements"],
@@ -14,14 +15,6 @@ const featureImages = [
   { src: "https://qgvhpeqwwolqrmiovjks.supabase.co/storage/v1/object/public/medias/1010674976-228f67cd.jpg", label: "Culture", title: "Culture et société nigériennes", href: "/fr/actualites" }
 ];
 
-const services = [
-  { title: "Événements", description: "Agenda, rendez-vous et événements à venir.", href: "/fr/evenements", icon: "◷" },
-  { title: "Émissions", description: "Podcasts, vidéos, interviews et débats.", href: "/fr/emissions", icon: "◉" },
-  { title: "Emplois", description: "Offres d’emploi, stages et concours.", href: "/fr/emplois", icon: "▤" },
-  { title: "Appels d’offres", description: "Avis, dossiers et dates limites.", href: "/fr/appels-offres", icon: "▣" },
-  { title: "Publicité", description: "Présentez votre marque aux lecteurs de Niger Info.", href: "/fr/publicite", icon: "↗" }
-];
-
 export default function HomePage() {
   const featuredStories = latestNews.slice(0, 3);
   const breakingStories = latestNews.slice(0, 4);
@@ -31,7 +24,7 @@ export default function HomePage() {
     <header className="site-header">
       <a className="brand" href="/fr" aria-label="Niger Info accueil"><img className="brand-logo" src="https://nigernfo.com/_next/image?url=%2Flogo.jpeg&w=384&q=75" alt="Niger Info" /><span>NIGER<strong>INFO</strong></span></a>
       <nav className="desktop-nav" aria-label="Navigation principale">{navItems.map(([label, href]) => <a href={href} key={href}>{label}</a>)}</nav>
-      <div className="header-actions"><a className="publish-link" href="/fr/publicite">Publier une publicité</a><a className="language" href="/en">EN</a><a className="menu-toggle" href="#rubriques" aria-label="Voir les rubriques">☰</a></div>
+      <div className="header-actions"><a className="publish-link" href="/fr/publicite">Publier une publicité</a><a className="language" href="/en">EN</a><SiteNavigation /></div>
     </header>
     <div className="breaking"><b>DERNIÈRES INFOS</b><div className="breaking-items">{breakingStories.map((story) => <a href={"/fr/actualites/" + story.slug} key={story.slug}>{story.title}</a>)}</div><a className="breaking-all" href="/fr/actualites">Toute l’actualité ↗</a></div>
 
@@ -55,11 +48,8 @@ export default function HomePage() {
 
     <NewsExplorer />
 
-    <section className="section" id="rubriques"><div className="section-heading"><div><p className="eyebrow">EXPLOREZ NIGER INFO</p><h2>Nos rubriques et services</h2></div><span>Les informations et services en un seul endroit</span></div><div className="cards">{services.map((s, i) => <a className="card" href={s.href} key={s.href}><span className="number">0{i + 1} · {s.icon}</span><h3>{s.title}</h3><p>{s.description}</p><span className="arrow">↗</span></a>)}</div></section>
-
     <section className="popular popular-stories"><div className="popular-heading"><p className="eyebrow">À DÉCOUVRIR</p><h2>Les dernières informations à suivre</h2><p>Une sélection des dernières publications de Niger Info.</p><a href="/fr/actualites">Voir toutes les actualités ↗</a></div><div className="popular-grid">{featuredStories.map((story) => <a className="popular-story" href={"/fr/actualites/" + story.slug} key={story.slug}><img src={story.image} alt="" /><div><span>{story.category} · {story.date}</span><h3>{story.title}</h3><b>Lire l’article ↗</b></div></a>)}</div></section>
     <section className="newsletter"><div><p className="eyebrow">RESTEZ INFORMÉ</p><h2>Les informations essentielles, dans votre boîte mail.</h2><p>La newsletter Niger Info vous accompagnera dans l’actualité.</p></div><NewsletterForm /></section>
     <footer className="site-footer"><div><a className="brand footer-brand" href="/fr"><img className="brand-logo" src="https://nigernfo.com/_next/image?url=%2Flogo.jpeg&w=384&q=75" alt="" /><span>NIGER<strong>INFO</strong></span></a><p>Le média d’information du Niger.</p></div><div><b>Rubriques</b>{navItems.map(([label, href]) => <a href={href} key={href}>{label}</a>)}</div><div><b>Informations</b><a href="/fr/contact">Contact</a><a href="/fr/mentions-legales">Mentions légales</a><a href="/fr/confidentialite">Confidentialité</a></div><div><b>Suivez-nous</b><a href="https://www.facebook.com/NIGERmonpays/" rel="noreferrer">Facebook ↗</a><a href="https://x.com" rel="noreferrer">X ↗</a><a href="https://whatsapp.com" rel="noreferrer">WhatsApp ↗</a></div><small>© 2026 Niger Info. Tous droits réservés.</small></footer>
-    <nav className="mobile-nav">{[["⌂", "Accueil", "/fr"], ["▤", "Actualités", "/fr/actualites"], ["▣", "Emplois", "/fr/emplois"], ["▧", "Appels d’offres", "/fr/appels-offres"], ["☰", "Menu", "#rubriques"]].map(([icon, label, href]) => <a href={href} key={label}><span>{icon}</span>{label}</a>)}</nav>
   </main>;
 }
